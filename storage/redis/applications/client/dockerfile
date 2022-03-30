@@ -11,7 +11,7 @@ COPY client.go /src
 
 RUN go build client.go
 
-FROM alpine as runtime
+FROM alpine:3.15.3 as runtime
 
 COPY --from=build /src/client /app/client
 CMD [ "/app/client" ]
