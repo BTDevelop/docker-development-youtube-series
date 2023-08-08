@@ -8,6 +8,6 @@ WORKDIR /app
 COPY ./app/* /app/
 RUN go build -o app
 
-FROM alpine as runtime 
+FROM alpine:3.18.3 as runtime 
 COPY --from=build /app/app /
 CMD ./app
