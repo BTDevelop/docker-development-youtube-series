@@ -12,7 +12,7 @@ COPY consumer.go /src
 RUN go build consumer.go
 
 
-FROM alpine as runtime
+FROM alpine:3.18.3 as runtime
 
 COPY --from=build /src/consumer /app/consumer
 
