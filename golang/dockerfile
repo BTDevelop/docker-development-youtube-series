@@ -27,6 +27,6 @@ ENTRYPOINT [ "/dlv.sh"]
 
 ###########START NEW IMAGE###################
 
-FROM alpine:3.9 as prod
+FROM alpine:3.19 as prod
 COPY --from=debug /go/src/work/app /
 CMD ./app
