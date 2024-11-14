@@ -11,7 +11,7 @@ COPY app.go /src
 
 RUN go build -o app
 
-FROM alpine:3.12
+FROM alpine:3.20.3
 
 RUN mkdir -p /app
 COPY --from=build /src/app /app/app
