@@ -17,7 +17,7 @@ RUN go get github.com/prometheus/client_golang/prometheus/promhttp
 COPY / /go/src/app/
 RUN go build -o myapp
 
-FROM alpine:3.10
+FROM alpine:3.21.2
 
 RUN apk update && apk upgrade && \
     apk add --no-cache openssh curl ca-certificates
